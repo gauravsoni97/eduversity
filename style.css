@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    /* ------------- Custom typography and fonts -------------  */
+
+    --body-font: 'Poppins', sans-serif;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .93rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* ------------- Custom color in website ------------- */
+
+    /* Note: Purple color in hsl = hsl(250, 66%, 75%) */
+
+    --hue: 250;
+    --sat: 66%;
+    --lig: 75%;
+    --title-color: hsl(var(--hue), 12%, 15%);
+    --first-color: hsl(var(--hue), var(--sat), var(--lig));
+    --first-color-alt: hsl(var(--hue), var(--sat), 57%);
+    --text-color: hsl(var(--hue), 12%, 45%);
+    --text-color-light: hsl(var(--hue), 12%, 15%);
+    --text-color-lighten: hsl(var(--hue), 8%, 75%);
+    --body-color: #fffcfa;
+    --container-color: #fff4ec;
+}
+
+/* responsiveness  */
+
+@media screen and (min-width:968px) {
+    :root {
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .87rem;
+        --smaller-font-size: .81rem;
+    }
+
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: .3s all ease-in-out !important;
+}
+
+
+
+/* heading style  */
+
+h1,
+h2,
+h3 {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* images style  */
+img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    border-radius: .4rem;
+    padding: .6rem 1rem !important;
+    background-color: black !important;
+    color: white !important;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.481);
+    transition: .3s all ease-in-out;
+    transform: scale(1);
+}
+
+@media screen and (max-width:600px) {
+    button, .watchvid{
+        font-size: .8rem !important;
+    }
+    .shoplink{
+        font-size: 1.1rem !important;
+    }
+    
+}
+
+button:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.497) !important;
+    transform: scale(.98);
+}
+
+/* Custom scroll bar */
+
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: rgb(255, 221, 209);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: hsl(var(--hue), 8%, 20%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--hue), 8%, 4%);
+}
+
+
+
+/* reusable custom classes  */
+
+
+
+.ctaimgstyle {
+    border-radius: 2rem !important;
+    border: 10px solid rgba(255, 127, 80, 0.112) !important;
+}
+
+
+.containerbg {
+    background-color: var(--container-color);
+}
+
+.borderrad-br {
+    border-bottom-right-radius: 5rem;
+
+}
+
+.borderrad-tl {
+    border-top-left-radius: 5rem;
+
+}
+
+
+
+/* navbar  */
+#nav-header {
+    z-index: 123;
+}
+
+.navlink_internal {
+    border-bottom: 2px solid transparent;
+    padding: 0 .2rem;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active-navlink,
+.navlink_internal:hover {
+    border-bottom: 2px solid rgb(255, 184, 130);
+    background: rgb(255, 217, 177);
+    background: linear-gradient(0deg, rgb(255, 230, 204) 0%, rgb(253, 230, 209) 8%, rgba(253, 244, 236, 1) 100%);
+    padding: 0 .2rem;
+}
+
+
+
+@media screen and (max-width:1030px) {
+    .navbarparent {
+        padding: 1rem 0 !important;
+        width: 100vw !important;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .logolink {
+        padding-left: 1rem !important;
+    }
+
+    .shoplink {
+        margin-right: 1rem !important;
+    }
+
+    .shiftnavlinks {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        background-color: var(--container-color) !important;
+        width: 100vw !important;
+        padding: 1.5rem 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.303) !important;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    .navbarparent {
+        flex-direction: row !important;
+    }
+
+    .logolink {
+        padding-left: 1rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .shoplink {
+        margin-right: 1rem !important;
+        margin-top: 0 !important;
+    }
+
+    .shiftnavlinks {
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-evenly !important;
+    }
+
+    .shiftnavlinks i {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .shiftnavlinks a {
+        margin-right: 0 !important;
+    }
+
+    .navlink_names {
+        display: none;
+    }
+
+    .active-navlink,
+    .navlink_internal:hover {
+        border-bottom: 2px solid rgb(255, 184, 130);
+        background: rgb(255, 217, 177);
+        background: linear-gradient(0deg, rgb(255, 230, 204) 0%, rgb(255, 221, 190) 8%, rgba(253, 244, 236, 1) 100%);
+        padding: .8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: coral !important;
+    }
+
+}
+
+
+/* counter */
+
+.border-l {
+    border-left: 1px solid rgba(210, 105, 30, 0.242);
+}
+
+
+/* body padding  */
+
+.bodypadding {
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+@media screen and (max-width:1300px) {
+    .bodypadding {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+}
+
+
+
+/* faq  */
+
+.accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+
+@media screen and (max-width:600px) {
+    .mb-sm {
+        margin-bottom: 8px;
+    }
+
+}
+
+
+
+/* custom cursor  */
+
+#cursor {
+    pointer-events: none;
+    display: none;
+    position: fixed;
+    top: var(--cursorY);
+    left: var(--cursorX);
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition-timing-function: ease-in-out;
+  }
+
+
+
+
+  /* custom loader  */
+
+  
